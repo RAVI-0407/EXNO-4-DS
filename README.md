@@ -51,6 +51,7 @@ from sklearn.preprocessing import StandardScaler
 sc=StandardScaler()
 df[['Height','Weight']]=sc.fit_transform(df[['Height','Weight']]) 
  df
+ 
 ![Screenshot 2024-11-28 134847](https://github.com/user-attachments/assets/7f498f9c-af74-46e4-a695-bba30454d3d8)
 
 
@@ -59,24 +60,28 @@ from sklearn.preprocessing import MinMaxScaler
 scaler=MinMaxScaler()
 df[['Height','Weight']]=scaler.fit_transform(df[['Height','Weight']])
 df
+
 ![Screenshot 2024-11-28 134856](https://github.com/user-attachments/assets/1aaf4a7e-6d28-4588-8ce2-ced8ba28f23d)
 
 from sklearn.preprocessing import Normalizer
 scaler=Normalizer()
 df[['Height','Weight']]=scaler.fit_transform(df[['Height','Weight']])
 df
+
 ![Screenshot 2024-11-28 134904](https://github.com/user-attachments/assets/1ed2c679-e73d-450a-832f-ffb5dccda288)
 
 from sklearn.preprocessing import MaxAbsScaler
 scaler=MaxAbsScaler()
 df[['Height','Weight']]=scaler.fit_transform(df[['Height','Weight']])
 df
+
 ![Screenshot 2024-11-28 134911](https://github.com/user-attachments/assets/b52caacb-f2f1-4738-81a7-3ef5dd3996ac)
 
 from sklearn.preprocessing import RobustScaler
 scaler=RobustScaler()
 df[['Height','Weight']]=scaler.fit_transform(df[['Height','Weight']])
 df
+
 ![Screenshot 2024-11-28 134917](https://github.com/user-attachments/assets/06517dcf-898b-4447-b21a-a28187c92f88)
 
 import pandas as pd
@@ -87,6 +92,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score,confusion_matrix
 data=pd.read_csv('drive/MyDrive/Data Science/income.csv',na_values=[" ?"])
 data
+
 ![Screenshot 2024-11-28 134932](https://github.com/user-attachments/assets/7b71e752-4f40-464d-802a-305143df3522)
 
 
@@ -96,27 +102,33 @@ data.isnull().sum()
 
 missing=data[data.isnull().any(axis=1)]
 missing
+
 ![Screenshot 2024-11-28 134953](https://github.com/user-attachments/assets/bfc4143f-7426-4e33-a40a-0438b41993cc)
 
 data2 = data.dropna(axis=0)
 data2
+
 ![Screenshot 2024-11-28 135001](https://github.com/user-attachments/assets/55230dbc-c0d7-42d6-afe5-1562677f8233)
 
 sal=data['SalStat']
 data2['SalStat']=data2['SalStat'].map({' less than or equal to 50,000':0,' greater than 50,000':1})
-print(data2['SalStat'])
+print(data2['SalStat
+
 ![Screenshot 2024-11-28 135009](https://github.com/user-attachments/assets/e1991ca0-a818-41ad-9adb-0a7012991a27)
 
 sal2=data2['SalStat']
 dfs=pd.concat([sal,sal2],axis=1)
 dfs
+
 ![Screenshot 2024-11-28 135016](https://github.com/user-attachments/assets/1f17d7cb-0b2e-4041-9906-ea48b14a9fab)
 
 data2
+
 ![Screenshot 2024-11-28 135023](https://github.com/user-attachments/assets/c8a3544d-5dfe-48a1-9749-7b1d3a0ac48b)
 
 new_data=pd.get_dummies(data2, drop_first=True)
 new_data
+
 ![Screenshot 2024-11-28 135034](https://github.com/user-attachments/assets/efb8a360-a409-4dee-a963-63e714c0d5ef)
 
 columns_list=list(new_data.columns)
@@ -131,6 +143,7 @@ print(y)
 
 x = new_data[features].values
 print(x)
+
 ![Screenshot 2024-11-28 135144](https://github.com/user-attachments/assets/d274100b-3090-4674-8441-2e9fe0d63a92)
 
 train_x,test_x,train_y,test_y = train_test_split(x,y,test_size=0.3, random_state=0)
@@ -149,6 +162,7 @@ print(accuracy_score)
 ![Screenshot 2024-11-28 135557](https://github.com/user-attachments/assets/acec7d7a-0198-4366-8271-c9f90614882e)
 
 print('Misclassified samples: %d' % (test_y != prediction).sum())
+
 ![Screenshot 2024-11-28 135602](https://github.com/user-attachments/assets/3ea67e20-ea92-420e-815c-8739c6ca019f)
 
 data.shape
