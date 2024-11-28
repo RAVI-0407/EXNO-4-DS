@@ -37,6 +37,7 @@ import scipy as stats
 
 df=pd.read_csv('drive/MyDrive/Data Science/bmi.csv')
 df.head()
+
 ![Screenshot 2024-11-28 134830](https://github.com/user-attachments/assets/38b737cc-f0e2-45b5-9c34-cce539f94849)
 
 df.dropna()
